@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass Engineering PLC | Industrial Electrical & Automation Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables for color palette and easy editing */
+        :root {
+            --primary-blue: #0A2647;      /* Trust, professionalism */
+            --electric-blue: #1E90FF;     /* Modern energy */
+            --safety-orange: #FF6600;     /* Industry, alert, action */
+            --text-dark: #333;
+            --text-light: #F4F4F4;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Basic Page Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--text-light);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Modern smooth scrolling */
+        }
+
+        /* --- Global Layout Classes --- */
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--safety-orange);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 400;
+            font-size: 15px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--safety-orange);
+        }
+
+        /* --- Hero/Home Section --- */
+        #home {
+            height: 100vh;
+            /* Placeholder Industrial Photo */
+            background: linear-gradient(rgba(10,38,71,0.8), rgba(10,38,71,0.9)), 
+                        url('https://images.pexels.com/photos/163185/engine-room-ships-heavy-mechanic-163185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 100px; /* Offset for fixed header */
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 span {
+            color: var(--electric-blue);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: var(--safety-orange);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(255,102,0,0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #E65C00;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--electric-blue);
+            color: var(--electric-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--electric-blue);
+            color: var(--white);
+        }
+
+        /* --- About Section --- */
+        #about {
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-header .underline {
+            width: 80px;
+            height: 4px;
+            background-color: var(--safety-orange);
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .client-list {
+            margin-top: 30px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .client-logo {
+            display: inline-block;
+            background: #eee;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius:18px;
+            box-shadow: var(--shadow);
+        }
+
+        /* --- Services Section --- */
+        #services {
+            background-color: #E8F1F8; /* Light blue tint */
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 5px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 5px solid var(--electric-blue);
+        }
+
+        .service-card .icon {
+            font-size: 50px;
+            color: var(--electric-blue);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        .service-card p {
+            font-size: 15px;
+            font-weight: 300;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        #contact h2 {
+            color: var(--white);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 20px;
+            margin-bottom: 50px;
+            border: solid white;
+            border-radius: 18px;
+            background: #3d6eff;
+        }
+
+        .contact-info div i {
+            color: var(--safety-orange);
+            margin-right: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #051528; /* Darker navy */
+            color: rgba(255,255,255,0.6);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 42px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Basic hides menu on small screens */
+            .logo { font-size: 24px; }
+            .hero-content h1 { font-size: 32px; }
+            .contact-info { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">COMPASS<span>.</span>Engineering</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container hero-content">
+            <h1>Industrial <span>Electrical</span> <br>Solutions.</h1>
+            <p>From Heavy Machinery Repair to Custom Control Boards, We Keep Ethiopian Industry Powered.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#contact" class="btn btn-secondary">Get a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Legacy</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Two Decades of Engineering Excellence</h3>
+                    <p>Compass Engineering PLC has been a cornerstone of Ethiopia's industrial sector for over 20 years. We specialize in providing comprehensive electrical engineering and automation services to corporate clients.</p>
+                    <p>We do not just fix devices; we safeguard your operational uptime. We are proud partners in maintaining critical infrastructure for esteemed organizations across Addis Ababa and Ethiopia.</p>
+                    <div class="client-list">
+                        Trusted By:
+                        <span class="client-logo">Alert Hospital</span>
+                        <span class="client-logo">Paulos Hospital</span>
+                        <span class="client-logo">Corporate Partners</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="icon.jpg" alt="Compass Engineering Industrial Electricians">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Specialized Services</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-industry"></i></div>
+                    <h3>Industrial Machinery</h3>
+                    <p>Repair, maintenance, and diagnostics for heavy industrial systems including Industrial Laundry, Multi-Ton Generators, Cutting, Pressing, Bending, and Welding equipment.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-tools"></i></div>
+                    <h3>Alternator Rewinding</h3>
+                    <p>Professional restoration and stator/rotor rewinding for a full range of alternators, from small backup units to massive corporate power generators.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Control Switchgear</h3>
+                    <p>Design and fabrication of custom Electrical Control Boards. Integrating breakers, contactors, motor protection, and timers for precise system automation.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container contact-content">
+            <div class="section-header">
+                <h2>Connect With Us</h2>
+                <div class="underline"></div>
+            </div>
+            <p>Ready to minimize downtime and optimize your electrical systems? Contact Compass Engineering today to discuss your industrial automation needs.</p>
+            
+            <div class="contact-info">
+                <div><i class="fas fa-map-marker-alt" id="address"></i> N/Silk Lafto SubCity Wereda 09 Saris/Addis Sefer around KADISCO -- Addis Ababa, Ethiopia</div>
+                <div><i class="fas fa-phone"></i>
+                <ul>
+                <li> +251 - 911667731 </li>
+                <li> +251 - 902643078 </li>
+                <li> +251 - 983111111 </li>
+                </ul>
+                
+                
+                </div>
+            </div>
+            
+            <a href="mailto:compassengineeringplc@gmail.com" class="btn btn-primary">Request Industrial Support</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+        
+        <div style="margin-top: 20px;">
+    <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 8px;">
+        Digital Identity & Development by:
+    </p>
+    <a href="https://brightweb-studio.netlify.app" target="_blank" 
+       style="display: inline-block; 
+              padding: 8px 18px; 
+              background: linear-gradient(45deg, #1E90FF, #FF6600); 
+              color: white; 
+              text-decoration: none; 
+              border-radius: 4px; 
+              font-weight: 600; 
+              font-size: 13px;
+              box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+              transition: transform 0.2s;">
+        <i class="fas fa-code" style="margin-right: 8px;"></i>Bright-Web Studio
+    </a>
+    
+    <p>&copy; 2026 Compass Engineering PLC. All Rights Reserved.</p>
+</div>
+        
+    </footer>
+
+</body>
+</html>
